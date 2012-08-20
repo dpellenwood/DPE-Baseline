@@ -5,11 +5,10 @@
  * The area of the page that contains both current comments
  * and the comment form. The actual display of comments is
  * handled by a callback to dpe_comment() which is
- * located in the ~/inc/misc.php file.
+ * located in the ~/inc/comments.php file.
  *
  * @package WordPress
- * @subpackage Twenty_Eleven
- * @since Twenty Eleven 1.0
+ * @subpackage DPE_Baseline
  */
 ?>
 	<div id="comments">
@@ -72,7 +71,7 @@
 	<?php
 		// Set up the comment form args
 		$form_args = array(
-			'class_submit' => 'small button',
+			'class_submit' => 'button red',
 			'class_form' => 'nice',
 		);
 		

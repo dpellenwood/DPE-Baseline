@@ -8,25 +8,54 @@
 
 get_header(); ?>
 
-		<div id="primary" class="eight columns">
-			<div id="content" role="main">
+		<section id="blog" role="main">
 
-				<?php while ( have_posts() ) : the_post(); ?>
+			<?php while( have_posts() ): the_post(); ?>
 
-					<nav id="nav-single">
-						<h3 class="assistive-text"><?php _e( 'Post navigation', 'twentyeleven' ); ?></h3>
-						<span class="nav-previous"><?php previous_post_link( '%link', __( '<span class="meta-nav">&larr;</span> Previous', 'twentyeleven' ) ); ?></span>
-						<span class="nav-next"><?php next_post_link( '%link', __( 'Next <span class="meta-nav">&rarr;</span>', 'twentyeleven' ) ); ?></span>
-					</nav><!-- #nav-single -->
+				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				
+					<?php
+						if( has_post_thumbnail() ):
+							the_post_thumbnail();
+					?>
+					
+					<h1 class="entry-title"><?php the_title(); ?></h1>
+					
+					<div class="entry-meta">
+						<?php
+							$categories_list = get_the_category_list( __( ', ', 'twentyeleven' ) );
+							if ( $categories_list ):
+						?>
+						<span class="cat-links">
+							<?php echo $categories_list; ?>
+						</span>
+						<?php endif; ?>
+						<time class="pub-date" datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('F j, Y'); ?></time>
+					</div>
+					
+					<div class="entry-content">
+						<?php the_content(); ?>
+						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'twentyten' ), 'after' => '</div>' ) ); ?>
+					</div><!-- .entry-content -->
+					
+					<footer class="entry-meta">
+						<?php
+							/* translators: used between list items, there is a space after the comma */
+							$tags_list = get_the_tag_list( '', __( ', ', 'twentyeleven' ) );
+							if ( $tags_list ): ?>
+							<span class="tag-links">
+								<?php printf( __( '<span class="%1$s">Tags:</span> %2$s', 'twentyeleven' ), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list ); ?>
+							</span>
+						<?php endif; // End if $tags_list ?>
+					</footer>
+						
+				</article><!-- #post-<?php the_ID(); ?> -->
 
-					<?php get_template_part( 'article', 'single' ); ?>
+				<?php comments_template( '', true ); ?>
 
-					<?php comments_template( '', true ); ?>
+			<?php endwhile; // end of the loop. ?>
 
-				<?php endwhile; // end of the loop. ?>
-
-			</div><!-- #content -->
-		</div><!-- #primary -->
+		</section><!-- #content -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

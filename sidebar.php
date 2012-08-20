@@ -1,15 +1,11 @@
 <?php
 /**
- * The main template file.
+ * The default sidebar template
  *
  * @package WordPress
  * @subpackage DPE_Baseline
  */
 ?>
-<div class="sidebar widget-area four columns" role="complementary">
-	<ul>
-		<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('A Sidebar')) : ?>
-		<li>Nothing here</li>
-		<?php endif; ?>
-	</ul>
-</div><!-- .sidebar -->
+<aside id="sidebar-1" class="sidebar" role="complementary">
+	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar() ) {} ?>
+</aside><!-- #sidebar-1 -->

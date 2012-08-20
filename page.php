@@ -8,19 +8,18 @@
 
 get_header(); ?>
 
-		<div id="primary" class="eight columns">
-			<div id="content" role="main">
+	<?php while( have_posts() ): the_post(); ?>
 
-				<?php while ( have_posts() ) : the_post(); ?>
+		<article id="page-<?php the_ID(); ?>" <?php post_class(); ?>>
+			
+			<h1 class="entry-title"><?php the_title(); ?></h1>
+			
+			<div class="entry-content">
+				<?php the_content(); ?>
+			</div><!-- .entry-content -->
+				
+		</article><!-- #page-<?php the_ID(); ?> -->
 
-					<?php get_template_part( 'article', 'page' ); ?>
-
-					<?php comments_template( '', true ); ?>
-
-				<?php endwhile; ?>
-
-			</div><!-- #content -->
-		</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
+	<?php endwhile; // end of the loop. ?>
+		
 <?php get_footer(); ?>

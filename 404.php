@@ -7,8 +7,6 @@
  */
 
 get_header(); ?>
-	
-		<div id="content" role="main" class="eight columns">
 
 			<article id="post-404" class="post no-results not-found">
 			
@@ -17,13 +15,10 @@ get_header(); ?>
 				</header><!-- .entry-header -->
 
 				<div class="entry-content">
-					<p>Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.</p>
-					<?php get_search_form(); ?>
+					<p>Apologies, but no results were found for the requested archive. You may want to try one of these options instead:</p>
+					<?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'container' => 'nav') ); ?>
 				</div><!-- .entry-content -->
 				
 			</article><!-- #post-0 -->
-
-		</div><!-- #content -->
-
-<?php get_sidebar(); ?>
+		
 <?php get_footer(); ?>

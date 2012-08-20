@@ -1,9 +1,10 @@
 <?php
 /**
- * The template for displaying search forms
+ * The template for displaying the search form
  *
  * @package WordPress
- * @subpackage DPE_Baseline */
+ * @subpackage DPE_Baseline
+ */
 ?>
 	<form method="get" id="searchform" class="nice" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 		<label for="s" class="assistive-text"><?php _e( 'Search', 'twentyeleven' ); ?></label>
