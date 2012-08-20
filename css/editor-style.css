@@ -1,0 +1,82 @@
+/*
+Theme Name: Canal Park Brewing Company
+Description: Used to style the TinyMCE editor.
+*/
+/* 
+	Eric Meyer's CSS Reset
+	http://meyerweb.com/eric/tools/css/reset/ 
+	v2.0 | 20110126
+	License: none (public domain)
+*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}
+html{font-size:62.5%}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+body{line-height:1}
+ol,ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}
+table{border-collapse:collapse;border-spacing:0}
+
+
+/* Selection colours (easy to forget) */
+::selection 	 	{background:#659BC5; color:#fff;}
+::-moz-selection 	{background:#659BC5; color:#fff;}
+img::selection 		{background:transparent;}
+img::-moz-selection	{background:transparent;}
+body 				{-webkit-tap-highlight-color:#659BC5;}
+
+
+/* Alignment & Assistive Text -------------- */
+	
+.alignleft		{display:block; margin-bottom:18px;}
+.alignright		{display:block; margin-bottom:18px;}
+.aligncenter	{clear:both; display:block; margin-left:auto; margin-right:auto;}
+.assistive-text,
+.screen-reader-text	{position:absolute!important; left:-9000px; clip:rect(1px 1px 1px 1px); /* IE6, IE7 */ clip:rect(1px, 1px, 1px, 1px);}
+
+.required	{color:#c53634;}
+.note		{padding:4px 8px; background:#f6f4f2;}
+
+.button			{display:block; margin:0; padding:9px 18px; font:700 13px/13px "futura-pt",sans-serif; text-transform:uppercase; letter-spacing:2px; color:#fff; background:#888; border:none; border-bottom:3px solid #ccc;}
+.button:hover	{color:#fff; background:#535353; border-bottom:3px solid #999; cursor:pointer;}
+.yellow			{color:#333; background:#ffcb2a; border-color:#ece7e3;}
+.yellow:hover	{color:#144f8e; background:#ffcb2a; border-color:#c6beb7;}
+.red			{color:#fff; background:#e04846; border-color:#ece7e3;}
+.red:hover		{color:#fff; background:#bd302e; border-color:#c6beb7;}
+
+
+/* Fonts & Colors -------------------------- */
+body 	{font-size:13px; line-height:1.6923; font-family:Georgia, serif; color:#313138; padding:6px; max-width:770px;}
+a		{color:#073e7a; text-decoration:none; -webkit-transition:all 0.25s ease; -moz-transition:all 0.25s ease; -o-transition:all 0.25s ease; transition:all 0.25s ease;}
+a:hover, a:focus		{color:#185da7;}
+h1, h2, h3, h4, h5, h6, .cta	{font-family:"futura-pt",sans-serif; font-weight:700; color:#185da7; text-transform:uppercase; letter-spacing:0.5px;}
+
+em		{font-style:italic;}
+strong	{font-weight:700;}
+
+h1	{font-size:24px; line-height:1.222222;}
+h2	{font-size:18px; line-height:1.222222;}
+h3	{font-size:16px; line-height:1.5;}
+h4	{font-size:15px; line-height:1.5;}
+h5	{font-size:14px; line-height:1.5;}
+h6	{font-size:13px; line-height:1.5;}
+
+
+.mceContentBody h1, .mceContentBody h2, .mceContentBody h3, .mceContentBody h4,
+.mceContentBody h5, .mceContentBody h6, .mceContentBody p, .mceContentBody ul,
+.mceContentBody ol, .mceContentBody dl	{margin-bottom:18px;}
+
+.mceContentBody h1+ol, .mceContentBody h1+ul, .mceContentBody h1+p,
+.mceContentBody h2+ol, .mceContentBody h2+ul, .mceContentBody h2+p,
+.mceContentBody h3+ol, .mceContentBody h3+ul, .mceContentBody h3+p,
+.mceContentBody h4+ol, .mceContentBody h4+ul, .mceContentBody h4+p {margin-top:-15px!important;}
+
+.mceContentBody table td,
+.mceContentBody table th {padding:12px; vertical-align:top;}
+.mceContentBody .half	{float:left; width:47%; margin-right:32px;}
+.mceContentBody a.ext	{padding-right:6px; background:transparent url('img/sprites.png') right -960px no-repeat;}
+
+
+
+.page-title	{font-family:"league-gothic","Arial narrow",sans-serif; font-weight:400; font-size:42px; letter-spacing:1px;}
+
