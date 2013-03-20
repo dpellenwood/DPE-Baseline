@@ -10,15 +10,15 @@
 ?>
 	</div><!-- #content -->
 	
-	<footer id="sitefoot">
-	
-		<?php wp_nav_menu( array( 'theme_location' => 'footer-menu', 'container' => 'nav' ) ); ?>
-
-		<div id="footer-sidebar" class="sidebar" role="complementary">
-			<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Footer')) {} ?>
-		</div><!-- #footer-sidebar -->
+	<footer id="site-footer">
 		
-	</footer><!-- #sitefoot -->
+		<?php if ( is_active_sidebar( 'sidebar-footer' ) ) : ?>
+			<aside id="sidebar-footer" class="sidebar" role="complementary">
+				<?php dynamic_sidebar( 'sidebar-footer' ); ?>
+			</aside><!-- #sidebar-footer -->
+		<?php endif; ?>
+		
+	</footer><!-- #site-footer -->
 	
 	<?php wp_footer(); ?>
 	

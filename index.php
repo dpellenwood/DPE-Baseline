@@ -21,11 +21,11 @@ get_header(); ?>
 							the_post_thumbnail();
 					?>
 					
-					<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'twentyeleven' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+					<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'dpe-baseline' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 					
 					<div class="entry-meta">
 						<?php
-							$categories_list = get_the_category_list( __( ', ', 'twentyeleven' ) );
+							$categories_list = get_the_category_list( __( ', ', 'dpe-baseline' ) );
 							if ( $categories_list ):
 						?>
 						<span class="cat-links">
@@ -52,18 +52,7 @@ get_header(); ?>
 
 		<?php else : ?>
 
-			<article id="post-0" class="post no-results not-found">
-			
-				<header class="entry-header">
-					<h2 class="entry-title"><?php _e( 'Nothing Found', 'twentyeleven' ); ?></h2>
-				</header><!-- .entry-header -->
-
-				<div class="entry-content">
-					<p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'twentyeleven' ); ?></p>
-					<?php get_search_form(); ?>
-				</div><!-- .entry-content -->
-				
-			</article><!-- #post-0 -->
+			<?php get_template_part( '404', 'content' ); ?>
 
 		<?php endif; ?>
 

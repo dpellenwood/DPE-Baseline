@@ -6,13 +6,6 @@
  * @subpackage DPE_Baseline
  */
 
-/**
- * Remove the comments RSS feed link
- */
-function remove_comments_rss( $for_comments ) {
-    return;
-}
-//add_filter('post_comments_feed_link','remove_comments_rss');
 
 /**
  * Remove the default inline comment styles
@@ -22,8 +15,6 @@ function dpe_remove_recent_comments_style() {
 	remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
 }
 add_action( 'widgets_init', 'dpe_remove_recent_comments_style' );
-
-
 
 
 /**
@@ -38,7 +29,7 @@ function dpe_comment( $comment, $args, $depth ) {
 		case 'trackback' :
 	?>
 	<li class="post pingback">
-		<p><?php _e( 'Pingback:', 'twentyeleven' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', 'twentyeleven' ), '<span class="edit-link">', '</span>' ); ?></p>
+		<p><?php _e( 'Pingback:', 'dpe-baseline' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', 'dpe-baseline' ), '<span class="edit-link">', '</span>' ); ?></p>
 	<?php
 			break;
 		default :
@@ -55,22 +46,22 @@ function dpe_comment( $comment, $args, $depth ) {
 						//echo get_avatar( $comment, $avatar_size );
 
 						/* translators: 1: comment author, 2: date and time */
-						printf( __( '%1$s &bull; %2$s', 'twentyeleven' ),
+						printf( __( '%1$s &bull; %2$s', 'dpe-baseline' ),
 							sprintf( '<span class="fn">%s</span>', get_comment_author_link() ),
 							sprintf( '<a href="%1$s"><time pubdate datetime="%2$s">%3$s</time></a>',
 								esc_url( get_comment_link( $comment->comment_ID ) ),
 								get_comment_time( 'c' ),
 								/* translators: 1: date, 2: time */
-								sprintf( __( '%1$s at %2$s', 'twentyeleven' ), get_comment_date(), get_comment_time() )
+								sprintf( __( '%1$s at %2$s', 'dpe-baseline' ), get_comment_date(), get_comment_time() )
 							)
 						);
 					?>
 
-					<?php edit_comment_link( __( 'Edit', 'twentyeleven' ), '<span class="edit-link">', '</span>' ); ?>
+					<?php edit_comment_link( __( 'Edit', 'dpe-baseline' ), '<span class="edit-link">', '</span>' ); ?>
 				</div><!-- .comment-author .vcard -->
 
 				<?php if ( $comment->comment_approved == '0' ) : ?>
-					<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'twentyeleven' ); ?></em>
+					<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'dpe-baseline' ); ?></em>
 					<br />
 				<?php endif; ?>
 
@@ -79,7 +70,7 @@ function dpe_comment( $comment, $args, $depth ) {
 			<div class="comment-content"><?php comment_text(); ?></div>
 
 			<div class="reply">
-				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply <span>&darr;</span>', 'twentyeleven' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply <span>&darr;</span>', 'dpe-baseline' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 			</div><!-- .reply -->
 		</article><!-- #comment-## -->
 

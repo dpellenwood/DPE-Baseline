@@ -1,7 +1,6 @@
+<?php
 /**
- * WP-Admin Scripts
- *
- * JavaScripts used in WP-Admin.
+ * WP-Admin specific functions of many kinds
  *
  * @package WordPress
  * @subpackage DPE_Baseline

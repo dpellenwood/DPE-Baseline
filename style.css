@@ -4,108 +4,12 @@ Theme URI: git://github.com/dpellenwood/DPE-Baseline.git
 Description: A Baseline theme starter stub.
 Author: David Paul Ellenwood
 Author URI: http://dpedesign.com
-Version: 2.0
+Version: 3.0
 */
 
-/* 
-	Eric Meyer's CSS Reset
-	http://meyerweb.com/eric/tools/css/reset/ 
-	v2.0 | 20110126
-	License: none (public domain)
-*/
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}
-html{font-size:62.5%}
-article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
-body{line-height:1}
-ol,ul{list-style:none}
-blockquote,q{quotes:none}
-blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}
-table{border-collapse:collapse;border-spacing:0}
-
-
-/* Selection colours (easy to forget) */
-::selection 	 	{background:#659BC5; color:#fff;}
-::-moz-selection 	{background:#659BC5; color:#fff;}
-img::selection 		{background:transparent;}
-img::-moz-selection	{background:transparent;}
-body 				{-webkit-tap-highlight-color:#659BC5;}
-
-
-/* Alignment & Assistive Text -------------- */
-	
-.alignleft		{display:block;}
-.alignright		{display:block;}
-.aligncenter	{clear:both; display:block; margin-left:auto; margin-right:auto;}
-.assistive-text,
-.screen-reader-text	{position:absolute!important; left:-9000px; clip:rect(1px 1px 1px 1px); /* IE6, IE7 */ clip:rect(1px, 1px, 1px, 1px);}
-
-.required	{color:#c53634;}
-.note		{}
-
-
-/* Fonts & Colors -------------------------- */
-body 	{color:#313138;}
-a		{color:#073e7a; text-decoration:none; -webkit-transition:all 0.2s ease; -moz-transition:all 0.2s ease; -o-transition:all 0.2s ease; transition:all 0.2s ease;}
-a:hover, a:focus	{color:#185da7;}
-h1, h2, h3, h4, h5, h6, .cta	{}
-
-em		{font-style:italic;}
-strong	{font-weight:700;}
-
-h1	{font-size:24px; line-height:1.222222;}
-h2	{font-size:18px; line-height:1.222222;}
-h3	{font-size:16px; line-height:1.5;}
-h4	{font-size:15px; line-height:1.5;}
-h5	{font-size:14px; line-height:1.5;}
-h6	{font-size:13px; line-height:1.5;}
-
-.entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4,
-.entry-content h5, .entry-content h6, .entry-content p, .entry-content ul,
-.entry-content ol, .entry-content dl	{margin-bottom:18px;}
-
-.entry-content h1+ol, .entry-content h1+ul, .entry-content h1+p,
-.entry-content h2+ol, .entry-content h2+ul, .entry-content h2+p,
-.entry-content h3+ol, .entry-content h3+ul, .entry-content h3+p,
-.entry-content h4+ol, .entry-content h4+ul, .entry-content h4+p {margin-top:-15px!important;}
-
-.entry-content table td,
-.entry-content table th {padding:12px; vertical-align:top;}
-
-.page-title	{}
-
-
-/* Page structure -------------------------- */
-
-
-
-/* Header & Footer -------------------------- */
-
-
-
-/* Homepage ---------------------------- */
-
-
-
-/* Widgets ----------------------------- */
-
-
-
-/* Comments ----------------------- */
-
-#comments 				{overflow:hidden;}
-#respond p				{overflow:hidden;}
-article.comment			{margin-bottom:24px; padding-bottom:12px; border-bottom:1px dashed #ccc;}
-.comment .children		{margin-left:30px;}
-#comments-title			{margin-bottom:12px;}
-.comment-meta			{margin-bottom:6px;}
-.comment-author .fn		{}
-.comment-meta a time	{}
-.comment-content p		{margin-bottom:6px;}
-.comment .reply,
-.comment .edit-link		{font-style:italic;}
-.comment-notes, .form-allowed-tags	{font-style:italic;}
-#comments label						{float:left; width:80px;}
-#comments .input-text				{float:left; width:auto;}
-.comment-form-comment				{margin-top:18px;}
-.comment-form-comment label			{display:block; width:auto;}
-.comment-form-comment textarea		{display:block; width:95%; clear:both; padding:5px;}
+/**
+ * This file only contains the WordPress theme metadata.
+ * The actual theme styles are located in css/style.css.
+ * This allows us to keep the metadata intact and still
+ * use CSS preprocessors such as CodeKit.
+ */

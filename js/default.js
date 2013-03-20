@@ -1,35 +1,18 @@
 /**
  * Sitewide Scripts
  *
- * JavaScripts used throughout the site.
+ * JavaScripts used throughout the public site.
  *
  * @package WordPress
  * @subpackage DPE_Baseline
  */
 
-jQuery(document).ready(function($) {	
+jQuery(document).ready(function($) {
 	
-	// Hide address bar on iPhone
-	//window.scrollTo(0,1);
+	// Adjust the body tag for JS support. This can be removed if using Modernizr.
+	$('html').removeClass('no-js');
 	
-	/**
-	 * Setup the Mailchimp widget display
-	 */
-	/*
-	$('input[name$="mailchimp_email"]').val('Enter your email address').addClass('default');
+	// Remove the title bar in iOS.
+	//setTimeout(function() { window.scrollTo(0, 1) }, 100 );
 	
-	// Setup the Mailchimp widget events
-	$('input[name$="mailchimp_email"]').focusin(function(){
-		var val = $(this).val();
-		if( val == 'Enter your email address' ) {
-			$(this).val('').removeClass('default');
-		}
-	}).focusout(function() {
-		var val = $(this).val();
-		if( val == '' ) {
-			$(this).val('Enter your email address').addClass('default');
-		}
-	});
-	*/	
 });
-

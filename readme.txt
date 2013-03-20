@@ -1,4 +1,4 @@
 DPE Baseline
 ============
 
-A WordPress Starter Theme Stub
+A WordPress Starter Theme Stub.

@@ -8,19 +8,17 @@
  * @subpackage DPE_Baseline
  */
 ?><!DOCTYPE html>
-<!--[if lt IE 9]><html class="ie"><![endif]-->
-<!--[if gte IE 9]><!--><html><!--<![endif]-->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
 	
-	<title><?php wp_title(''); ?></title>
+	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width" />
-	
-	<!--[if lt IE 9]>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	
 	<?php wp_head(); ?>
 
