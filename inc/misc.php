@@ -28,7 +28,7 @@ function dpe_admin_sns( $hook ) {
 	global $post_type;
     if( ('post.php' == $hook) && ( 'brew' == $post_type || 'post' == $post_type ) ) {
 		wp_enqueue_style( 'dpe-admin', get_stylesheet_directory_uri() . '/css/admin.css', array(''), DPE_THEME_VER, 'all' );
-		//wp_enqueue_script( 'dpe-admin', get_stylesheet_directory_uri() . '/css/admin.js', array(''), DPE_THEME_VER, true );
+		//wp_enqueue_script( 'dpe-admin', get_stylesheet_directory_uri() . '/css/admin.min.js', array(''), DPE_THEME_VER, true );
 	}
 }
 //add_action( 'admin_enqueue_scripts', 'dpe_admin_sns', 8 );
