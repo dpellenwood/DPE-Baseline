@@ -47,6 +47,10 @@ function dpe_baseline_setup() {
 		)
 	);
 	
+	// We've got to se this now since there is no option in admin
+	if ( ! isset( $content_width ) )
+		$content_width = 600;
+	
 	//require_once( get_template_directory() . '/inc/theme-options.php' );	// Load up our theme options page and related code.
 	
 }
