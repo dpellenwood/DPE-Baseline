@@ -16,6 +16,12 @@ define( 'DPE_THEME_VER', dpe_static_file_version() );
 
 
 /**
+ * Set the content_width since oEmbed now rely on this
+ */
+$content_width = 600;
+
+
+/**
  * Include other helpful theme functions
  */
 //require_once( get_template_directory() . '/inc/widgets.php' );	// Initiate any theme-specific widgets.
@@ -46,10 +52,6 @@ function dpe_baseline_setup() {
 		  'header-menu' => 'Header Navigation',
 		)
 	);
-	
-	// We've got to se this now since there is no option in admin
-	if ( ! isset( $content_width ) )
-		$content_width = 600;
 	
 	//require_once( get_template_directory() . '/inc/theme-options.php' );	// Load up our theme options page and related code.
 	
