@@ -1,11 +1,11 @@
-/* 
-Theme Name: DPE Baseline
-Theme URI: git://github.com/dpellenwood/DPE-Baseline.git
-Description: A Baseline theme starter stub.
-Author: David Paul Ellenwood
-Author URI: http://dpedesign.com
-Version: 3.0
-*/
+/**
+ * Main Site/Theme Styles
+ *
+ * Styles used on the public-facing website as part of the current theme.
+ *
+ * @package WordPress
+ * @subpackage DPE_Baseline
+ */
 
 @import url("normalize.less");
 
@@ -17,6 +17,10 @@ img::-moz-selection	{}
 
 
 /* Alignment & Assistive Text -------------- */
+.cf:before,
+.cf:after 			{content:" "; display:table;}
+.cf:after 			{clear:both;}
+.cf					{*zoom:1;}
 .required			{}
 .note				{}
 .error				{}
@@ -28,7 +32,7 @@ img::-moz-selection	{}
 .screen-reader-text	{position:absolute!important; left:-9000px; clip:rect(1px 1px 1px 1px); /* IE6, IE7 */ clip:rect(1px, 1px, 1px, 1px);}
 
 
-/* Fonts & Colors -------------------------- */
+/* Getting started... -------------------------- */
 body 		{-webkit-tap-highlight-color:red;}
 a			{}
 a:hover,
