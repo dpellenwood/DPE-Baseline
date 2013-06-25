@@ -20,16 +20,37 @@
     <meta name="viewport" content="width=device-width" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	
+	<link type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic" rel="stylesheet">
+	<script type="text/javascript" src="//use.typekit.net/uvj5ocq.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	
 	<?php wp_head(); ?>
 
 </head>
 
 <body <?php body_class(); ?>>
-		
-	<header id="masthead" role="navigation">
-		
-		<?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'container' => 'nav') ); ?>
-		
-	</header><!-- #masthead -->
 	
-	<div id="content" role="main">
+	<div class="wrap">
+	
+		<header id="masthead" role="navigation">
+			
+			<?php if( is_front_page() ): ?>
+				<h1 class="site-name offset-text"><?php bloginfo('name'); ?></h1>
+			<?php else: ?>
+				<div class="site-name offset-text"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></div>
+			<?php endif; ?>
+			
+			<div class="main-menu">
+				<a id="menu-toggle" class="toggle" href="#">Menu<span aria-hidden="true" class="icon-menu"></span></a>
+				<nav id="site-nav">
+					<?php wp_nav_menu( array( 'theme_location' => 'primary-header-menu', 'container' => false, 'menu_class' => 'primary menu' ) ); ?>
+					<?php wp_nav_menu( array( 'theme_location' => 'secondary-header-menu', 'container' => false, 'menu_class' => 'secondary menu' ) ); ?>
+					<?php get_search_form(); ?>
+				</nav>
+			</div>
+			
+			<div class="breadcrumbs">Breadcrumbs / Go / Here</div>
+			
+		</header><!-- #masthead -->
+		
+		<div id="content" role="main">

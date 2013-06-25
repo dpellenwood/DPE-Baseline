@@ -35,10 +35,45 @@ input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit
 button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
 textarea{overflow:auto;vertical-align:top;}
 table{border-collapse:collapse;border-spacing:0;}
+@font-face{font-family:'vcp';src:url('../fonts/vcp.eot');src:url('../fonts/vcp.eot?#iefix') format('embedded-opentype'),url('../fonts/vcp.woff') format('woff'),url('../fonts/vcp.ttf') format('truetype'),url('../fonts/vcp.svg#vcp') format('svg');font-weight:normal;font-style:normal;}[data-icon]:before{font-family:'vcp';content:attr(data-icon);speak:none;font-weight:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;}
+.icon-menu,.icon-facebook,.icon-twitter,.icon-youtube,.icon-vimeo,.icon-hello,.icon-cup,.icon-knife,.icon-compass{font-family:'vcp';speak:none;font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;}
+.icon-menu:before{content:"\e000";}
+.icon-facebook:before{content:"\e001";}
+.icon-twitter:before{content:"\e002";}
+.icon-youtube:before{content:"\e003";}
+.icon-vimeo:before{content:"\e004";}
+.icon-hello:before{content:"\e005";}
+.icon-cup:before{content:"\e006";}
+.icon-knife:before{content:"\e007";}
+.icon-compass:before{content:"\e008";}
+.OffsetText{text-indent:-9000em;outline:none;overflow:hidden;}
+.toggle{display:none;}
 .alignleft{width:auto;float:left;}
 .alignright{width:auto;float:right;}
 .aligncenter{clear:both;display:block;margin-left:auto;margin-right:auto;}
 .assistive-text,.screen-reader-text{position:absolute!important;left:-9000px;clip:rect(1px 1px 1px 1px);clip:rect(1px, 1px, 1px, 1px);}
-body{-webkit-tap-highlight-color:red;}
+html{font-size:150%;font-family:'Merriweather',serif;color:#1c1a1a;}
+body{font-size:16px;font-size:0.6666666666666666rem;line-height:1.5;-webkit-tap-highlight-color:red;}
+a{color:#1e4054;text-decoration:none;transition:all 0.2s ease;}
+a:hover,a:focus{color:#ca5934;}
 em{font-style:italic;}
 strong{font-weight:700;}
+h1,h2,h3,h4,h5,h6{font-family:'futura-pt',sans-serif;font-weight:700;}
+.wrap{width:640px;margin:0 auto;}
+.boxed{padding:0 30px 30px;}
+#masthead{font-family:'futura-pt',sans-serif;font-weight:500;}#masthead .main-menu{position:relative;margin-bottom:1em;padding:10px 30px;background:#eeeff0;font-size:20px;font-size:0.8333333333333334rem;}#masthead .main-menu a{color:#1c1a1a;}
+#masthead .main-menu a:hover,#masthead .main-menu a:focus{color:#ca5934;}
+#masthead .main-menu #menu-toggle{color:#949695;text-transform:uppercase;font-weight:700;}#masthead .main-menu #menu-toggle span{padding-left:3px;font-size:18px;font-size:0.75rem;}
+#masthead .main-menu #menu-toggle:hover{color:#ca5934;}
+#masthead .main-menu #site-nav{position:absolute;top:50px;left:0;width:100%;background:#eeeff0;}#masthead .main-menu #site-nav ul{margin:0 30px;padding:0;list-style:none;}
+#masthead .main-menu #site-nav ul ul{margin:0 0 0 2em;}
+#masthead .main-menu #site-nav li{border-bottom:1px solid #dedede;}
+#masthead .main-menu #site-nav a{display:block;padding:0.3em 0.5em;}
+#masthead .main-menu #site-nav .secondary a{color:#616362;}
+#masthead .main-menu #site-nav .secondary a:hover,#masthead .main-menu #site-nav .secondary a:focus{color:#ca5934;}
+#masthead .main-menu #site-nav .searchform{margin:1em 30px;}
+#masthead .breadcrumbs{display:none;}
+.site-name{text-indent:-9000em;outline:none;overflow:hidden;height:120px;margin:30px 0 30px 40px;background:transparent url('../img/vcp-logo.png') no-repeat;background-size:contain;}.site-name a{display:block;height:100%;}
+html.js .toggle{display:inherit;}
+html.js #site-nav{display:none;}
+html.svg .site-name{background:transparent url('../img/vcp-logo.svg') no-repeat;background-size:contain;}

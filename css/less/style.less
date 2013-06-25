@@ -8,6 +8,17 @@
  */
 
 @import url("normalize.less");
+@import url("fonts.less");
+
+/* Basic colors ---------------------------- */
+@black:		rgb(28,26,26);
+@blue:		rgb(30,64,84);
+@green:		rgb(116,166,99);
+@orange:	rgb(202,89,52);
+@greytxt:	rgb(148,150,149);
+@greymid:	rgb(222,222,222);
+@greylite:	rgb(238,239,240);
+@white:		rgb(255,255,255);
 
 /* Selection colours (easy to forget) ------ */
 ::selection 	 	{}
@@ -15,16 +26,34 @@
 img::selection 		{}
 img::-moz-selection	{}
 
+/* Fonts ----------------------------------- */
+@sans:			'futura-pt',sans-serif;
+@serif:			'Merriweather',serif;
+@baseFontSize:	'24';
+.FontSize( @size ) {
+	@remValue: ( @size / @baseFontSize );
+	@pxValue:	@size;
+	font-size: ~"@{pxValue}px"; 
+	font-size: ~"@{remValue}rem";
+}
 
 /* Alignment & Assistive Text -------------- */
-.cf:before,
-.cf:after 			{content:" "; display:table;}
-.cf:after 			{clear:both;}
-.cf					{*zoom:1;}
+.BoxShadow( @shadow: 0 1px 3px rgba(0,0,0,.25 ) ) {
+	-webkit-box-shadow: @shadow; // iOS <4.3 & Android <4.1
+	box-shadow: @shadow;
+}
+.ClearFix() {
+	&:before, &:after {content:" "; display:table;}
+	&:after {clear:both;}
+}
+.OffsetText {
+	text-indent:-9000em; outline:none; overflow:hidden;
+}
 .required			{}
 .note				{}
 .error				{}
 .success			{}
+.toggle				{display:none;}
 .alignleft			{width:auto; float:left;}
 .alignright			{width:auto; float:right;}
 .aligncenter		{clear:both; display:block; margin-left:auto; margin-right:auto;}
@@ -32,15 +61,20 @@ img::-moz-selection	{}
 .screen-reader-text	{position:absolute!important; left:-9000px; clip:rect(1px 1px 1px 1px); /* IE6, IE7 */ clip:rect(1px, 1px, 1px, 1px);}
 
 
-/* Getting started... -------------------------- */
-body 		{-webkit-tap-highlight-color:red;}
-a			{}
+/* Get 'er done... -------------------------- */
+html		{font-size:150%; font-family:@serif; color:@black;} // Defaults our HTML font to 24px
+body 		{.FontSize(16); line-height:1.5; -webkit-tap-highlight-color:red;}
+a			{color:@blue; text-decoration:none; transition:all 0.2s ease;}
 a:hover,
-a:focus		{}
+a:focus		{color:@orange;}
 
 em		{font-style:italic;}
 strong	{font-weight:700;}
 
+h1,h2,h3,h4,h5,h6	{font-family:@sans; font-weight:700;}
+
+
+/*
 .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4,
 .entry-content h5, .entry-content h6, .entry-content p, .entry-content ul,
 .entry-content ol, .entry-content dl	{}
@@ -52,3 +86,54 @@ strong	{font-weight:700;}
 
 .entry-content table td,
 .entry-content table th {}
+*/
+
+.wrap 	{width:640px; margin:0 auto;}
+
+.boxed	{padding:0 30px 30px;}
+
+
+#masthead {
+	font-family:@sans; font-weight:500;
+	.main-menu {
+		position:relative; margin-bottom:1em; padding:10px 30px; background:@greylite; .FontSize(20);
+		a {color:@black;}
+		a:hover, a:focus {color:@orange;}				
+		#menu-toggle {
+			color:@greytxt; text-transform:uppercase; font-weight:700;
+			span	{padding-left:3px; .FontSize(18);}
+		}
+		#menu-toggle:hover	{color:@orange;}
+		#site-nav {
+			position:absolute; top:50px; left:0; width:100%; background:@greylite;
+			ul		{margin:0 30px; padding:0; list-style:none;}
+			ul ul	{margin:0 0 0 2em;}
+			li		{border-bottom:1px solid @greymid;}
+			a		{display:block; padding:0.3em 0.5em;}
+			.secondary	{
+				a {color:darken(@greytxt, 20%);}
+				a:hover, a:focus {color:@orange;}
+			}
+			.searchform {margin:1em 30px;}
+		}
+	}
+	.breadcrumbs	{display:none;}
+}
+.site-name	{
+	.OffsetText; height:120px; margin:30px 0 30px 40px; background:transparent url('../img/vcp-logo.png') no-repeat; background-size:contain;
+	a {display:block; height:100%;}
+}
+
+
+
+
+/* Stuff to change when we have JavaScript Support */
+html.js	{
+	.toggle 	{display:inherit;}
+	#site-nav	{display:none;}
+}
+
+/* Stuff to change when we have SVG support */
+html.svg {
+	.site-name {background:transparent url('../img/vcp-logo.svg') no-repeat;  background-size:contain;}
+}

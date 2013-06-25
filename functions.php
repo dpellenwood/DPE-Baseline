@@ -49,7 +49,8 @@ function dpe_baseline_setup() {
 	add_editor_style('css/editor.css'); // Style the visual editor.
 	register_nav_menus(
 		array(
-		  'header-menu' => 'Header Navigation',
+		  'primary-header-menu'		=> 'Primary Navigation',
+		  'secondary-header-menu'	=> 'Secondary Navigation',
 		)
 	);
 	

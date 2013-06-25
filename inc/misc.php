@@ -14,7 +14,7 @@ function dpe_baseline_sns() {
 	wp_enqueue_style( 'dpe-baseline', get_stylesheet_directory_uri() . '/css/style.css', array(), DPE_THEME_VER, 'all' );
 	
 	// Load JavaScripts
-	wp_enqueue_script( 'dpe-baseline-plugins', get_stylesheet_directory_uri() . '/js/plugins.min.js', array( 'jquery' ), DPE_THEME_VER, true );
+	wp_enqueue_script( 'modernizr', get_stylesheet_directory_uri() . '/js/modernizr.min.js', array(), null, false );
 	wp_enqueue_script( 'dpe-baseline-default', get_stylesheet_directory_uri() . '/js/default.min.js', array( 'jquery' ), DPE_THEME_VER, true );
 	
 }
