@@ -53,7 +53,7 @@ table{border-collapse:collapse;border-spacing:0;}
 .aligncenter{clear:both;display:block;margin-left:auto;margin-right:auto;}
 .assistive-text,.screen-reader-text{position:absolute!important;left:-9000px;clip:rect(1px 1px 1px 1px);clip:rect(1px, 1px, 1px, 1px);}
 html{font-size:150%;font-family:'Merriweather',serif;color:#1c1a1a;}
-body{font-size:16px;font-size:0.6666666666666666rem;line-height:1.5;-webkit-tap-highlight-color:red;}
+body{font-size:16px;font-size:0.6666666666666666rem;line-height:1.5;border-top:5px solid #1e4054;-webkit-tap-highlight-color:red;}
 a{color:#1e4054;text-decoration:none;transition:all 0.2s ease;}
 a:hover,a:focus{color:#ca5934;}
 em{font-style:italic;}

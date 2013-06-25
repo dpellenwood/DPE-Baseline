@@ -20,6 +20,12 @@
 @greylite:	rgb(238,239,240);
 @white:		rgb(255,255,255);
 
+.BoxShadow( @shadow: 0 1px 3px rgba(0,0,0,.25 ) ) {
+	-webkit-box-shadow: @shadow; // iOS <4.3 & Android <4.1
+	box-shadow: @shadow;
+}
+
+
 /* Selection colours (easy to forget) ------ */
 ::selection 	 	{}
 ::-moz-selection 	{}
@@ -38,10 +44,6 @@ img::-moz-selection	{}
 }
 
 /* Alignment & Assistive Text -------------- */
-.BoxShadow( @shadow: 0 1px 3px rgba(0,0,0,.25 ) ) {
-	-webkit-box-shadow: @shadow; // iOS <4.3 & Android <4.1
-	box-shadow: @shadow;
-}
 .ClearFix() {
 	&:before, &:after {content:" "; display:table;}
 	&:after {clear:both;}
@@ -63,7 +65,7 @@ img::-moz-selection	{}
 
 /* Get 'er done... -------------------------- */
 html		{font-size:150%; font-family:@serif; color:@black;} // Defaults our HTML font to 24px
-body 		{.FontSize(16); line-height:1.5; -webkit-tap-highlight-color:red;}
+body 		{.FontSize(16); line-height:1.5; border-top:5px solid @blue; -webkit-tap-highlight-color:red;}
 a			{color:@blue; text-decoration:none; transition:all 0.2s ease;}
 a:hover,
 a:focus		{color:@orange;}
