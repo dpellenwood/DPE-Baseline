@@ -78,7 +78,7 @@ img::-moz-selection	{}
 
 /* Get 'er done... -------------------------- */
 html		{font-size:150%; font-family:@serif; color:@black;} // Defaults our HTML font to 24px
-body 		{position:relative; .FontSize(24); line-height:1.5; border-top:5px solid @blue; -webkit-tap-highlight-color:red;}
+body 		{position:relative; .FontSize(24); line-height:1.5; -webkit-tap-highlight-color:red;}
 a			{color:@blue; text-decoration:none; transition:all 0.2s ease;}
 a:hover,
 a:focus		{color:@bluelite;}
@@ -99,6 +99,8 @@ label	{font-family:@sans; font-weight:700; text-transform:uppercase;}
 
 h1,h2,h3,h4,h5,h6,th	{font-family:@sans; font-weight:700;}
 
+
+.entry-title	{margin-top:0;}
 
 .entry-content {
 	img, embed, object	{max-width:100%; height:auto; margin-bottom:1em;}
@@ -126,7 +128,9 @@ h1,h2,h3,h4,h5,h6,th	{font-family:@sans; font-weight:700;}
 }
 
 .boxed		{padding:0 30px 30px;}
-.wrap 		{width:640px; margin:0 auto;}
+.banner		{width:100%; display:block; border-top:3px solid @blue; .BoxShadow( 0 5px 8px rgba(0, 0, 0, 0.33) );}
+.wrap 		{width:100%; margin:0 auto;}
+#content	{margin-top:60px; .ClearFix();}
 
 .sidebar	{
 	background:@greylite;
@@ -135,6 +139,11 @@ h1,h2,h3,h4,h5,h6,th	{font-family:@sans; font-weight:700;}
 		border-bottom:1px solid fade(@greytxt, 20%);
 	}
 	.widget-title	{margin-top:0;}
+}
+
+.site-name	{
+	height:120px; margin:30px 0 30px 40px; background:transparent url('../img/vcp-logo.png') no-repeat; background-size:contain; .OffsetText; 
+	a {display:block; height:100%;}
 }
 
 #masthead {
@@ -164,11 +173,12 @@ h1,h2,h3,h4,h5,h6,th	{font-family:@sans; font-weight:700;}
 			}
 		}
 	}
-	.breadcrumbs	{display:none;}
 }
-.site-name	{
-	.OffsetText; height:120px; margin:30px 0 30px 40px; background:transparent url('../img/vcp-logo.png') no-repeat; background-size:contain;
-	a {display:block; height:100%;}
+
+#breadcrumbs	{
+	display:none; margin:20px 300px 20px 30px; color:@greytxt; font-family:@sans; font-weight:500;
+	a, .breadcrumb_last {padding:0.5em 0.1em;}
+	.breadcrumb_last	{}
 }
 
 #site-footer	{
@@ -177,8 +187,6 @@ h1,h2,h3,h4,h5,h6,th	{font-family:@sans; font-weight:700;}
 	.GradientGrey;
 	> * {padding:30px;}
 }
-
-
 
 
 /* Stuff to change when we have JavaScript Support */
@@ -190,4 +198,115 @@ html.js	{
 /* Stuff to change when we have SVG support */
 html.svg {
 	.site-name {background:transparent url('../img/vcp-logo.svg') no-repeat;  background-size:contain;}
+}
+
+
+article	{margin-bottom:40px;}
+
+
+
+/** 
+ * For tablets
+ */
+@media only screen and (min-width: 768px) {
+
+	@baseFontSize:	'20';
+	.FontSize( @size ) {
+		@remValue: ( @size / @baseFontSize );
+		@pxValue:	@size;
+		font-size: ~"@{pxValue}px"; 
+		font-size: ~"@{remValue}rem";
+	}
+	
+	html	{font-size:125%;}
+
+}
+
+
+
+/**
+ * For small desktops & tablets in landscape
+ */
+@media only screen and (min-width: 768px) and (orientation: landscape) {
+
+	@baseFontSize:	'16';
+	.FontSize( @size ) {
+		@remValue: ( @size / @baseFontSize );
+		@pxValue:	@size;
+		font-size: ~"@{pxValue}px"; 
+		font-size: ~"@{remValue}rem";
+	}
+	
+	html	{font-size:100%;}
+	
+	.banner		{border-top-width:16px;}
+	.wrap 		{max-width:960px;}
+	.site-name	{position:absolute; top:0; left:0; height:90px; width:380px; margin-left:0; z-index:3;}
+	
+	#masthead {
+		position:relative; margin:0 30px; border-bottom:1px solid @greymid;
+		.main-menu {
+			padding:0; background:transparent; border:none;
+			#menu-toggle 	{display:none;}
+			#site-nav		{
+				display:block; height:215px; background:none;
+				ul	{border-bottom:none;}
+				li	{
+					border:none;
+					a {padding:0.2em 0.5em;}
+				}
+				ul.primary	{
+					position:absolute; bottom:0; left:0; margin:10px 0; width:460px;
+					li {display:inline-block;}
+				}
+				ul.secondary	{position:absolute; bottom:0; right:0; width:250px; margin:10px 0; text-align:right;}
+				.searchform		{
+					position:absolute; bottom:-75px; right:0; padding-right:0;
+					#s	{width:160px;}
+				}
+			}
+		}
+	}
+	
+	#breadcrumbs 	{display:block;}
+	.home #breadcrumbs,
+	.front-page #breadcrumbs 	{visibility:hidden;}
+	
+}
+
+
+/**
+ * For standard desktop screens
+ */
+@media only screen and (min-width: 960px) {
+	
+	.single #content, .blog #content {
+		.colmwrap	{float:left; width:100%;}
+		.colm		{margin-right:305px;}
+		.sidebar	{
+			float:left; width:270px; margin-left:-270px; background:transparent;
+			.colm	{margin:0 30px 0 0; background:@greylite;}
+			.widget {padding:10px; overflow:hidden;}
+		}
+	}
+
+}
+
+
+/**
+ * For large screens
+ */
+@media only screen and (min-width: 1100px) {
+
+	@baseFontSize:	'16';
+	.FontSize( @size ) {
+		@remValue: ( @size / @baseFontSize );
+		@pxValue:	@size;
+		font-size: ~"@{pxValue}px"; 
+		font-size: ~"@{remValue}rem";
+	}
+	
+	.banner	{border-top-width:30px;}
+	.wrap 	{max-width:1300px;}
+	
 }

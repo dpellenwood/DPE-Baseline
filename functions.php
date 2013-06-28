@@ -45,8 +45,7 @@ function dpe_baseline_setup() {
 	//add_filter('show_admin_bar', '__return_false'); //Disable the admin bar
 	add_theme_support( 'automatic-feed-links' ); // Add default posts and comments RSS feed links to <head>.
 	add_theme_support( 'post-thumbnails' );
-		set_post_thumbnail_size( 840, 270, true );
-		add_image_size( 'feature-two', 1170, 270, true );
+		set_post_thumbnail_size( 1170, 375, true );
 	add_editor_style('css/editor.css'); // Style the visual editor.
 	register_nav_menus(
 		array(

@@ -239,7 +239,7 @@ button.btn.btn-mini,input[type="submit"].btn.btn-mini{*padding-top:1px;*padding-
 .wp-post-image{max-width:100%;height:auto;}
 .assistive-text,.screen-reader-text{position:absolute!important;left:-9000px;clip:rect(1px 1px 1px 1px);clip:rect(1px, 1px, 1px, 1px);}
 html{font-size:150%;font-family:'Merriweather',serif;color:#1c1a1a;}
-body{position:relative;font-size:24px;font-size:1rem;line-height:1.5;border-top:5px solid #1e4054;-webkit-tap-highlight-color:red;}
+body{position:relative;font-size:24px;font-size:1rem;line-height:1.5;-webkit-tap-highlight-color:red;}
 a{color:#1e4054;text-decoration:none;transition:all 0.2s ease;}
 a:hover,a:focus{color:#2f96b4;}
 button,submit{transition:all 0.2s ease;}
@@ -255,6 +255,7 @@ th{background:#eeeff0;text-align:left;}
 form{margin-bottom:0;}
 label{font-family:'futura-pt',sans-serif;font-weight:700;text-transform:uppercase;}
 h1,h2,h3,h4,h5,h6,th{font-family:'futura-pt',sans-serif;font-weight:700;}
+.entry-title{margin-top:0;}
 .entry-content img,.entry-content embed,.entry-content object{max-width:100%;height:auto;margin-bottom:1em;}
 .entry-content img.alignright{margin:0.3333em 0 1em 1em;}
 .entry-content img.alignleft{margin:0.3333em 1em 1em 0;}
@@ -271,9 +272,13 @@ h1,h2,h3,h4,h5,h6,th{font-family:'futura-pt',sans-serif;font-weight:700;}
 .comments .commentlist>.comment{padding-bottom:0.5em;border-bottom:1px dotted #dedede;}
 .comments .comment-content{font-family:'Merriweather',serif;font-weight:400;font-size:16px;font-size:0.6666666666666666rem;}
 .boxed{padding:0 30px 30px;}
-.wrap{width:640px;margin:0 auto;}
+.banner{width:100%;display:block;border-top:3px solid #1e4054;-webkit-box-shadow:0 5px 8px rgba(0, 0, 0, 0.33);box-shadow:0 5px 8px rgba(0, 0, 0, 0.33);}
+.wrap{width:100%;margin:0 auto;}
+#content{margin-top:60px;}#content:before,#content:after{content:" ";display:table;}
+#content:after{clear:both;}
 .sidebar{background:#eeeff0;}.sidebar .widget{padding:30px;border-bottom:1px solid rgba(148, 150, 149, 0.2);}
 .sidebar .widget-title{margin-top:0;}
+.site-name{height:120px;margin:30px 0 30px 40px;background:transparent url('../img/vcp-logo.png') no-repeat;background-size:contain;text-indent:-9000em;outline:none;overflow:hidden;}.site-name a{display:block;height:100%;}
 #masthead{font-family:'futura-pt',sans-serif;font-weight:500;}#masthead .main-menu{position:relative;padding:10px 30px;background:#eeeff0;border-bottom:1px solid #dedede;font-size:24px;font-size:1rem;}#masthead .main-menu a{color:#1c1a1a;}
 #masthead .main-menu a:hover,#masthead .main-menu a:focus{color:#2f96b4;}
 #masthead .main-menu #menu-toggle{color:#949695;text-transform:uppercase;font-weight:700;padding:0.6em 0;}#masthead .main-menu #menu-toggle span{padding-left:0.5em;font-size:22px;font-size:0.9166666666666666rem;}
@@ -287,9 +292,10 @@ h1,h2,h3,h4,h5,h6,th{font-family:'futura-pt',sans-serif;font-weight:700;}
 #masthead .main-menu #site-nav .secondary a{color:#616362;text-transform:none;font-weight:500;}
 #masthead .main-menu #site-nav .secondary a:hover,#masthead .main-menu #site-nav .secondary a:focus{color:#2f96b4;}
 #masthead .main-menu #site-nav .searchform{display:block;margin:1em 0;padding:0.3em 1em;}#masthead .main-menu #site-nav .searchform #s{width:220px;}
-#masthead .breadcrumbs{display:none;}
-.site-name{text-indent:-9000em;outline:none;overflow:hidden;height:120px;margin:30px 0 30px 40px;background:transparent url('../img/vcp-logo.png') no-repeat;background-size:contain;}.site-name a{display:block;height:100%;}
+#breadcrumbs{display:none;margin:20px 300px 20px 30px;color:#949695;font-family:'futura-pt',sans-serif;font-weight:500;}#breadcrumbs a,#breadcrumbs .breadcrumb_last{padding:0.5em 0.1em;}
 #site-footer{font-family:'futura-pt',sans-serif;font-weight:500;color:#949695;background:#eeeff0;background-image:-ms-linear-gradient(top, #eeeff0 60%, #cecfd0 100%);background-image:-moz-linear-gradient(top, #eeeff0 60%, #cecfd0 100%);background-image:-o-linear-gradient(top, #eeeff0 60%, #cecfd0 100%);background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0.6, #eeeff0), color-stop(1, #cecfd0));background-image:-webkit-linear-gradient(top, #eeeff0 60%, #cecfd0 100%);background-image:linear-gradient(to bottom, #eeeff0 60%, #cecfd0 100%);}#site-footer>*{padding:30px;}
 html.js .toggle{display:inherit;}
 html.js #site-nav{display:none;}
 html.svg .site-name{background:transparent url('../img/vcp-logo.svg') no-repeat;background-size:contain;}
+article{margin-bottom:40px;}
+@media only screen and (min-width:768px){html{font-size:125%;}}@media only screen and (min-width:768px) and (orientation:landscape){html{font-size:100%;} .banner{border-top-width:16px;} .wrap{max-width:960px;} .site-name{position:absolute;top:0;left:0;height:90px;width:380px;margin-left:0;z-index:3;} #masthead{position:relative;margin:0 30px;border-bottom:1px solid #dedede;}#masthead .main-menu{padding:0;background:transparent;border:none;}#masthead .main-menu #menu-toggle{display:none;} #masthead .main-menu #site-nav{display:block;height:215px;background:none;}#masthead .main-menu #site-nav ul{border-bottom:none;} #masthead .main-menu #site-nav li{border:none;}#masthead .main-menu #site-nav li a{padding:0.2em 0.5em;} #masthead .main-menu #site-nav ul.primary{position:absolute;bottom:0;left:0;margin:10px 0;width:460px;}#masthead .main-menu #site-nav ul.primary li{display:inline-block;} #masthead .main-menu #site-nav ul.secondary{position:absolute;bottom:0;right:0;width:250px;margin:10px 0;text-align:right;} #masthead .main-menu #site-nav .searchform{position:absolute;bottom:-75px;right:0;padding-right:0;}#masthead .main-menu #site-nav .searchform #s{width:160px;} #breadcrumbs{display:block;} .home #breadcrumbs,.front-page #breadcrumbs{visibility:hidden;}}@media only screen and (min-width:960px){.single #content .colmwrap,.blog #content .colmwrap{float:left;width:100%;} .single #content .colm,.blog #content .colm{margin-right:305px;} .single #content .sidebar,.blog #content .sidebar{float:left;width:270px;margin-left:-270px;background:transparent;}.single #content .sidebar .colm,.blog #content .sidebar .colm{margin:0 30px 0 0;background:#eeeff0;} .single #content .sidebar .widget,.blog #content .sidebar .widget{padding:10px;overflow:hidden;}}@media only screen and (min-width:1100px){.banner{border-top-width:30px;} .wrap{max-width:1300px;}}

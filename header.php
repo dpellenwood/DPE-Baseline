@@ -29,6 +29,8 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+	<span class="banner" aria-hidden="true"></span>
 	
 	<div class="wrap">
 	
@@ -49,8 +51,8 @@
 				</nav>
 			</div>
 			
-			<div class="breadcrumbs">Breadcrumbs / Go / Here</div>
-			
 		</header><!-- #masthead -->
+		
+		<?php if ( function_exists('yoast_breadcrumb') ) { yoast_breadcrumb('<div id="breadcrumbs">','</div>'); } ?>
 		
 		<div id="content" role="main">
