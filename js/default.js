@@ -16,6 +16,7 @@ jQuery(document).ready(function($) {
 	$('#menu-toggle').click( function(e) {
 		e.preventDefault();
 		$('#site-nav').slideToggle();
+		$(this).find('span').toggleClass('icon-arrow-down icon-arrow-up');
 	});
 	
 });

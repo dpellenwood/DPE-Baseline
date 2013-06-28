@@ -5,7 +5,6 @@
  * @package WordPress
  * @subpackage DPE_Baseline
  */
- 
 
 /** Add front-end CSS & JavaScripts */
 function dpe_baseline_sns() {
@@ -19,19 +18,6 @@ function dpe_baseline_sns() {
 	
 }
 add_action( 'wp_enqueue_scripts', 'dpe_baseline_sns' );
-
-
-/**
- * Add some admin styles & scripts. 
- */
-function dpe_admin_sns( $hook ) {
-	global $post_type;
-    if( ('post.php' == $hook) && ( 'brew' == $post_type || 'post' == $post_type ) ) {
-		wp_enqueue_style( 'dpe-admin', get_stylesheet_directory_uri() . '/css/admin.css', array(''), DPE_THEME_VER, 'all' );
-		//wp_enqueue_script( 'dpe-admin', get_stylesheet_directory_uri() . '/css/admin.min.js', array(''), DPE_THEME_VER, true );
-	}
-}
-//add_action( 'admin_enqueue_scripts', 'dpe_admin_sns', 8 );
 
 
 /**
@@ -101,3 +87,26 @@ function dpe_page_nav( $nav_id ) {
 		</nav><!-- #nav-above -->
 	<?php endif;
 }
+
+
+/**
+ * Disable & adjust some admin items for WordPress SEO
+ */
+function dpe_admin_bar_render() {
+	global $wp_admin_bar;
+	$wp_admin_bar->remove_menu('wpseo-menu');
+}
+add_action( 'wp_before_admin_bar_render', 'dpe_admin_bar_render' );
+
+/**
+ * Create a date shortcode
+ *
+ * Returns the current date
+ */
+function dpe_date( $atts ) {
+	extract( shortcode_atts( array(
+		'format' => 'Y',
+	), $atts ) );
+	return date( $format );
+}
+add_shortcode( 'date', 'dpe_date' );

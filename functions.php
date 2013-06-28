@@ -12,13 +12,14 @@
 /**
  *  Define any theme constants
  */
-define( 'DPE_THEME_VER', dpe_static_file_version() );
+define( 'DPE_THEME_VER',		dpe_static_file_version() );
+define( 'DPE_CONTENT_WIDTH',	840 );
 
 
 /**
  * Set the content_width since oEmbed now rely on this
  */
-$content_width = 600;
+$content_width = DPE_CONTENT_WIDTH;
 
 
 /**
@@ -28,7 +29,7 @@ $content_width = 600;
 require_once( get_template_directory() . '/inc/sidebars.php' );	// Register custom widgets and sidebar/widget areas.
 require_once( get_template_directory() . '/inc/misc.php' );		// Miscellaneous theme functions including style & script inclusion.
 require_once( get_template_directory() . '/inc/comments.php' );	// Actions & functions to tweak comments output.
-//require_once( get_template_directory() . '/inc/admin.php' );	// WP-ADMIN specific functions.
+require_once( get_template_directory() . '/inc/admin.php' );	// WP-ADMIN specific functions.
 
 
 /**
@@ -44,8 +45,8 @@ function dpe_baseline_setup() {
 	//add_filter('show_admin_bar', '__return_false'); //Disable the admin bar
 	add_theme_support( 'automatic-feed-links' ); // Add default posts and comments RSS feed links to <head>.
 	add_theme_support( 'post-thumbnails' );
-		//set_post_thumbnail_size( 228, 323, true );
-		//add_image_size( 'size-two', 340, 260, true );
+		set_post_thumbnail_size( 840, 270, true );
+		add_image_size( 'feature-two', 1170, 270, true );
 	add_editor_style('css/editor.css'); // Style the visual editor.
 	register_nav_menus(
 		array(
@@ -53,8 +54,7 @@ function dpe_baseline_setup() {
 		  'secondary-header-menu'	=> 'Secondary Navigation',
 		)
 	);
-	
-	//require_once( get_template_directory() . '/inc/theme-options.php' );	// Load up our theme options page and related code.
+	require_once( get_template_directory() . '/inc/theme-options.php' );
 	
 }
 add_action( 'after_setup_theme', 'dpe_baseline_setup' );

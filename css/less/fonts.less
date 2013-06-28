@@ -33,7 +33,7 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
 [class*="icon-"] {
 */
-.icon-menu, .icon-facebook, .icon-twitter, .icon-youtube, .icon-vimeo, .icon-hello, .icon-cup, .icon-knife, .icon-compass {
+.icon-list, .icon-facebook, .icon-twitter, .icon-youtube, .icon-vimeo, .icon-hello, .icon-cup, .icon-knife, .icon-compass, .icon-logo, .icon-arrow-left, .icon-arrow-right, .icon-arrow-down, .icon-arrow-up {
 	font-family: 'vcp';
 	speak: none;
 	font-style: normal;
@@ -43,7 +43,7 @@ you can use the generic selector below, but it's slower:
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
 }
-.icon-menu:before {
+.icon-list:before {
 	content: "\e000";
 }
 .icon-facebook:before {
@@ -69,4 +69,19 @@ you can use the generic selector below, but it's slower:
 }
 .icon-compass:before {
 	content: "\e008";
+}
+.icon-logo:before {
+	content: "\e009";
+}
+.icon-arrow-left:before {
+	content: "\e00a";
+}
+.icon-arrow-right:before {
+	content: "\e00b";
+}
+.icon-arrow-down:before {
+	content: "\e00c";
+}
+.icon-arrow-up:before {
+	content: "\e00d";
 }

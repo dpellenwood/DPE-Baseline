@@ -11,7 +11,7 @@
  * @subpackage DPE_Baseline
  */
 ?>
-	<div id="comments">
+	<div id="comments" class="comments boxed">
 		<?php if ( post_password_required() ) : ?>
 			<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'dpe-baseline' ); ?></p>
 		</div><!-- #comments -->
@@ -71,8 +71,7 @@
 		<?php
 			// Set up the comment form args
 			$form_args = array(
-				'class_submit' => 'button red',
-				'class_form' => 'nice',
+				'class_submit' => 'btn btn-info',
 			);
 			
 			dpe_comment_form( $form_args );

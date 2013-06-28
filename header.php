@@ -41,7 +41,7 @@
 			<?php endif; ?>
 			
 			<div class="main-menu">
-				<a id="menu-toggle" class="toggle" href="#">Menu<span aria-hidden="true" class="icon-menu"></span></a>
+				<a id="menu-toggle" class="toggle" href="#">Menu<span aria-hidden="true" class="icon-arrow-down"></span></a>
 				<nav id="site-nav">
 					<?php wp_nav_menu( array( 'theme_location' => 'primary-header-menu', 'container' => false, 'menu_class' => 'primary menu' ) ); ?>
 					<?php wp_nav_menu( array( 'theme_location' => 'secondary-header-menu', 'container' => false, 'menu_class' => 'secondary menu' ) ); ?>
