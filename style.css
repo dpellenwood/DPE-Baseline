@@ -4,12 +4,23 @@ Theme URI: git://github.com/dpellenwood/DPE-Baseline.git
 Description: A Baseline theme starter stub.
 Author: DPE Websmithing & Design, LLC
 Author URI: http://dpedesign.com
-Version: 3.0
+Version: 4.0
 */
 
 /**
- * This file only contains the WordPress theme metadata.
- * The actual theme styles are located in css/style.css.
- * This allows us to keep the metadata intact and still
- * use CSS preprocessors such as CodeKit.
+ **********************************************************
+ * !!! PLEASE DO NOT ADD CUSTOM STYLES HERE !!!
+ * 
+ * Add custom styles to /assets/styles/extras.css instead.
+ * Styles added here or to /assets/styles/style.css file
+ * WILL BE OVERWRITTEN by version control.
+ *
+ **********************************************************
+ */
+
+/**
+ * This file only contains the WordPress theme metadata. The
+ * actual theme styles are located in /assets/styles/style.css.
+ * This allows us to keep the metadata intact and still use CSS
+ * preprocessors such as CodeKit.
  */

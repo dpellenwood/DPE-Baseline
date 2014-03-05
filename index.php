@@ -56,7 +56,7 @@ get_header(); ?>
 
 		<?php endif; ?>
 
-		</section><!-- #content -->
+		</section><!-- #blog -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

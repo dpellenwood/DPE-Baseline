@@ -1,15 +1,13 @@
 <?php
 /**
  * Register our sidebars and widget areas.
- * Also registers any theme-specific widgets we've created in widgets.php
  *
  * @package WordPress
  * @subpackage DPE_Baseline
  */
-function dpe_baseline_widgets_init() {
-	
-	//register_widget( 'dpe_events_meta_widget' );
-	
+
+function dpe_baseline_sidebars_init() {
+	/*
 	register_sidebar( array(
 		'name' => __( 'Sidebar 1', 'dpe-baseline' ),
 		'id' => 'sidebar-1',
@@ -19,6 +17,6 @@ function dpe_baseline_widgets_init() {
 		'before_title' => '<h2 class="widget-title">',
 		'after_title' => '</h2>',
 	) );
+	*/
 	
 }
-add_action( 'widgets_init', 'dpe_baseline_widgets_init' );
